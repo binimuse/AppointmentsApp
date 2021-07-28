@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/English"
+
+        android:title="English" />
+    <item android:id="@+id/Amharic"
+
+        android:iconTint="@color/text_colors"
+
+        android:title="Amharic" />
+    <item android:id="@+id/Oromiffa"
+        android:iconTint="@color/text_colors"
+
+
+        android:title="Afan Oromo" />
+    <item android:id="@+id/Tigregha"
+        android:iconTint="@color/text_colors"
+
+        android:title="Tigrigna" />
+    <item android:id="@+id/Somalia"
+        android:iconTint="@color/text_colors"
+
+        android:title="Somali" />
+    <item android:id="@+id/Afar"
+        android:iconTint="@color/text_colors"
+
+        android:title="Afar" />
+</menu>

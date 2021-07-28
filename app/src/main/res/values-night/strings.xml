@@ -1,0 +1,91 @@
+<resources>
+    <string name="app_name">Online Lottery System</string>
+    <string name="title_activity_main2">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_Setting">Setting</string>
+    <string name="Select">Select Language</string>
+    <string name="Nocon">No Internet Connection Press Ok to open  Network setting</string>
+    <string name="Notifications">Notifications</string>
+    <string name="newd">New Deals &amp; Rewards</string>
+    <string name="promo">Occasional promo</string>
+    <string name="event">Event &amp; Match</string>
+    <string name="More">More</string>
+    <string name="Ask"> Ask a Question</string>
+    <string name="faq">F A Q</string>
+    <string name="priv">Privacy policy</string>
+    <string name="teme">Change Theme</string>
+    <string name="connection">No Internet Connection please Enable connection and restart the application</string>
+    <string name="uploads_disabled">File uploads are disabled.</string>
+    <string name="choose_upload">Choose file for upload</string>
+
+    <string name="messageWithLink"><a href="https://peaceanddignityforethiopians.com/">peaceanddignityforethiopians.com</a></string>
+    <string name="office">Office</string>
+    <string name="myApppointement">My Appointment</string>
+    <string name="up"> UPCOMING NATIONAL PROJECT</string>
+
+    <string name="gena">Genale Dawa Hydroelectric PowerPlant</string>
+    <string name="dinee">DINE For ETHIOPIA</string>
+    <string name="grandd">Grand Ethiopian Renaissance Dam (GERD)</string>
+    <string name="sure">Are you sure you want to exit</string>
+
+    <string name="project">Projects</string>
+    <string name="about">About</string>
+    <string name="ok">OK</string>
+    <string name="can">Cancel</string>
+    <string name="con">Confirmation</string>
+    <string name="help">help</string>
+    <string name="contact">Contact</string>
+    <string name="commnet">Click to Comment</string>
+    <string name="eng">English</string>
+    <string name="amh">Amharic</string>
+    <string name="tig">Oromiffa</string>
+    <string name="oro">Tigrigha</string>
+    <string name="Change">Change Language</string>
+    <string name="she">Sheger projects</string>
+    <string name="other">Other projects</string>
+    <string name="mesob">Mesob Tower</string>
+    <string name="entoto">Entoto Natural Park</string>
+    <string name="aboutus">About Us</string>
+    <string name="aboutuss">The office of the Ministry of Peace was created to sustain the reforms that Ethiopia is currently undergoing through peace-building measures, establishing and strengthening the rule of law, and building the capacity of peace and security focused sectors.
+        Additionally, the office is tasked with using already existing social customs to deepen and sustain peace-building objectives and building national consensus.</string>
+    <string name="our">Our Mission</string>
+    <string name="ourr">• Properly accepting customer feedback on government institutions \n\
+                        • Modernizing and streamlining the services of government institutions \n\
+                        • Legally hold the perpetrators accountable in government institutions \n\
+                        • Enabling to bridge the gap between public and government institutions and work together in unity \n\
+
+  <string name="blind">blind Mood</string>
+         <string name="more">More Information</string>
+</string>
+    <string name="vis">Our Vision</string>
+    <string name="viss">•Ensuring the delivery of public institutions with honesty, diligence, and efficiency </string>
+    <string name="contactus">Contact Us</string>
+    <string name="contactuss">Since Its established to prevent and resolve conflicts . And also to bring equitable development among the regions in order to create stable nation.  You can Contact us for More information</string>
+
+    <string name="ourcon">Our Contact Address</string>
+    <string name="fb">Facebook</string>
+    <string name="li">LinkedIn</string>
+    <string name="tw">Twitter</string>
+    <string name="in">Instagram</string>
+    <string name="ver">Version</string>
+    <string name="last">Last updated</string>
+    <string name="news">News</string>
+
+    <string name="medium_lorem_ipsum">Quisque imperdiet nunc at massa dictum volutpat. Etiam id orci ipsum. Integer id ex dignissim</string>
+
+    <string name="gen">
+        Built by a Chinese firm – China Gezhouba Group – Genale Dawa III hydroelectric plant has consumed a total investment outlay of US $451m,
+        out of which about US $67.8m was covered by the Government of Ethiopia. The remaining was covered by a loan.
+    </string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="step_of">Step %1$d of %2$d</string>
+    <string name="section_format">Section : %1$d</string>
+    <string name="GOT_IT">GOT_IT</string>
+    <string name="NEXT">NEXT</string>
+    <string name="title_activity_main3">MainActivity3</string>
+    <string name="tab_text_1">SHEGER PROJECTS</string>
+    <string name="tab_text_2">Other PROJECTS</string>
+
+</resources>

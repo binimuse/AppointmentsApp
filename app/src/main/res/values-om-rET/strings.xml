@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Online Lottery System</string>
+    <string name="title_activity_main2">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_Setting">Setting</string>
+    <string name="Select">Select Language</string>
+    <string name="connection">
+ኢንተርኔት ግንኙነት የለም እባክዎ ግንኙነቱን ያንቁ እና መተግበሪያውን እንደገና ያስጀምሩ</string>
+
+    <string name="teme">ገጽታ ለውጥ</string>
+    <string name="Notifications">Notifications</string>
+    <string name="newd">New Deals &amp; Rewards</string>
+    <string name="promo">Occasional promo</string>
+    <string name="event">Event &amp; Match</string>
+    <string name="More">More</string>
+    <string name="Ask"> Ask a Question</string>
+    <string name="faq">F A Q</string>
+    <string name="priv">Privacy policy</string>
+    <string name="Nocon">No Internet Connection please turn on your Internet connection</string>
+    <string name="project">Projects</string>
+    <string name="about">About</string>
+
+    <string name="help">help</string>
+    <string name="contact">contact</string>
+
+    <string name="up"> UPCOMING NATIONAL PROJECT</string>
+    <string name="uploads_disabled">File uploads are disabled.</string>
+    <string name="choose_upload">Choose file for upload</string>
+    <string name="gena">Ganaale daawaa 3 Madda Annisa eletrikaa</string>
+    <string name="dinee">Maadii biyyaaf</string>
+    <string name="grandd">Hidha guddicha haroomsa itiyoopiya</string>
+    <string name="sure">Are you sure you want to exit</string>
+
+    <string name="ok">OK</string>
+    <string name="can">Cancel</string>
+    <string name="con">Confirmation</string>
+    <string name="commnet">To comment</string>
+
+    <string name="eng">English</string>
+    <string name="amh">Amharic</string>
+    <string name="tig">Oromiffa</string>
+    <string name="oro">Tigrigha</string>
+    <string name="she">Sheger project</string>
+    <string name="other">Other project</string>
+    <string name="mesob">Mesob Tower</string>
+
+    <string name="entoto">እንጦጦ የተፈጥሮ ፓርክ</string>
+    <string name="Change">Afaan jijiri</string>
+
+
+    <string name="medium_lorem_ipsum">Quisque imperdiet nunc at massa dictum volutpat. Etiam id orci ipsum. Integer id ex dignissim</string>
+
+    <string name="gen">
+     Ijaarsi Madda Anniisaa eletrikaa kun kan hojjatamu dhaabbata chaayinaa ” China gezhouba group “ jedhamuun yoo ta’u,
+Ijaarsi isaas doolaara Amerikaa miliyoona 451 kan fixu yoo ta’u kana keessaa doolara milliyo 67.8 mootummaa Itiyoopiyatiin danda’ama. Kan hafe liqiidhaan Akka argamu eeggama.
+
+    </string>
+
+
+    <string name="contactus">Contact Us</string>
+    <string name="contactuss">The Ministry of Peace established to prevent and resolve conflicts, to bring equitable development among the regions and to create stable nation.</string>
+
+    <string name="ourcon">Our Contact Address</string>
+    <string name="fb">Facebook</string>
+    <string name="li">LinkedIn</string>
+    <string name="tw">Twitter</string>
+    <string name="in">Instagram</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="step_of">Step %1$d of %2$d</string>
+    <string name="section_format">Section : %1$d</string>
+    <string name="GOT_IT">GOT_IT</string>
+    <string name="NEXT">NEXT</string>
+    <string name="title_activity_main3">MainActivity3</string>
+    <string name="tab_text_1">SHEGER PROJECTS</string>
+    <string name="tab_text_2">Other PROJECTS</string>
+    <string
+        name="messageWithLink"><a href="https://peaceanddignityforethiopians.com/">peaceanddignityforethiopians.com</a></string>
+    <string name="news">News</string>
+
+    <string name="blind">blind Mood</string>
+
+</resources>

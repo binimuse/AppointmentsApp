@@ -1,0 +1,115 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="fontFamily">@font/hiwua</item>
+    </style>
+
+
+    <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:windowBackground">@drawable/splash_background</item>
+    </style>
+
+    <style name="MineCustomTabText" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:fontFamily">@font/roboto_light</item>
+    </style>
+    <style name="AppCompatAlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorAccent">@color/white</item>
+        <item name="android:textColor">@color/yellow_600</item>
+        <item name="android:background">@color/black</item>
+    </style>
+    <style name="Button.Primary.Borderless" parent="@style/Widget.AppCompat.Button.Borderless.Colored">
+        <item name="android:textColor">@color/overlay_light_90</item>
+    </style>
+
+    <style name="Button.White.Primary" parent="@style/Widget.AppCompat.Button.Colored">
+        <item name="colorButtonNormal">@android:color/white</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+    <style name="TextAppearance.Medium.Bold" parent="@style/TextAppearance.AppCompat.Medium">
+        <item name="android:textStyle">bold</item>
+    </style>
+    <!--style for ripple library-->
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="Dialog.Theme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+    </style>
+    <style name="Yellow.Small.AppCompatRatingBar" parent="Base.Widget.AppCompat.RatingBar.Small">
+        <item name="colorControlNormal">@color/grey_60</item>
+        <item name="colorControlActivated">@color/yellow_600</item>
+    </style>
+
+    <style name="Yellow.Small.AppCompatRatingBar.White" parent="Base.Widget.AppCompat.RatingBar.Small">
+        <item name="colorControlNormal">@color/grey_20</item>
+        <item name="colorControlActivated">@color/yellow_600</item>
+    </style>
+    <style name="PopupStyle" parent="Widget.AppCompat.PopupMenu">
+        <item name="android:textColorPrimary">@color/text_colors</item>
+        <item name="android:background">#ffff</item>
+    </style>
+
+    <style name="Yellow.Very.Small.AppCompatRatingBar" parent="@style/Yellow.Small.AppCompatRatingBar">
+        <item name="android:minHeight">8dp</item>
+        <item name="android:maxHeight">8dp</item>
+
+
+    </style>
+    <style name="MyButtonStyle" parent="Widget.MaterialComponents.Button">
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay.MyApp.Button.Rounded</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.MyApp.Button.Rounded" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">16dp</item>
+    </style>
+    <style name="Divider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">@color/gray_btn_bg_color</item>
+    </style>
+    <style name="Button.White.Accent" parent="@style/Widget.AppCompat.Button.Colored">
+        <item name="colorButtonNormal">@android:color/white</item>
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+    <style name="Toolbar.Light" parent="@style/AppTheme">
+        <item name="colorControlNormal">@color/grey_60</item>
+        <item name="android:textColorPrimary">@color/grey_60</item>
+    </style>
+
+    <style name="TextAppearance.Subhead.Bold"
+        parent="@style/TextAppearance.AppCompat.Subhead">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Yellow.AppCompatRatingBar" parent="Base.Widget.AppCompat.RatingBar.Indicator">
+        <item name="colorControlNormal">@color/grey_60</item>
+        <item name="colorControlActivated">@color/yellow_600</item>
+    </style>
+    <style name="indicator_style">
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:layout_width">10dp</item>
+        <item name="android:layout_height">10dp</item>
+        <item name="android:button">@null</item>
+        <item name="android:background">@drawable/bg_gradient_soft</item>
+    </style>
+    <style name="Button.Accent.Borderless" parent="@style/Widget.AppCompat.Button.Borderless.Colored">
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
+    <style name="SwitchCompatStyle" >
+        <item name="thumbTint">@color/light_blue_400</item>
+        <item name="trackTint">#ffff</item>
+    </style>
+
+</resources>

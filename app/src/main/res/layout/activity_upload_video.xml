@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<androidx.drawerlayout.widget.DrawerLayout
+    android:id="@+id/drawer_layout3"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fancy="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    app:tabTextAppearance="@style/MineCustomTabText"
+    tools:context=".MainActivity"
+    tools:openDrawer="start"
+    android:background="@color/colorPrimary">
+
+
+
+
+    <LinearLayout
+        android:id="@+id/lyt_form"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/spacing_large">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:layout_width="@dimen/spacing_mxlarge"
+                android:layout_height="@dimen/spacing_mxlarge"
+                android:layout_marginTop="@dimen/spacing_mlarge"
+                android:background="@android:color/transparent"
+                android:tint="@color/overlay_light_90"
+                app:srcCompat="@drawable/ic_person"
+                tools:ignore="VectorDrawableCompat" />
+
+            <View
+                android:layout_width="@dimen/spacing_large"
+                android:layout_height="match_parent" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/overlay_light_90">
+
+             <androidx.appcompat.widget.AppCompatEditText
+                    android:layout_width="match_parent"
+                    android:id="@+id/fullname"
+                 android:textColor="@color/overlay_light_90"
+                    android:layout_height="wrap_content"
+                    android:hint="Full Name" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/spacing_large" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:layout_width="@dimen/spacing_mxlarge"
+                    android:layout_height="@dimen/spacing_mxlarge"
+                    android:layout_marginTop="@dimen/spacing_mlarge"
+                    android:background="@android:color/transparent"
+                    android:tint="@color/overlay_light_90"
+                    app:srcCompat="@drawable/ic_phone"
+                    tools:ignore="VectorDrawableCompat" />
+
+                <View
+                    android:layout_width="@dimen/spacing_large"
+                    android:layout_height="match_parent" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColorHint="@color/overlay_light_90">
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:layout_width="match_parent"
+                        android:id="@+id/phone"
+                   android:inputType="number"
+                        android:textColor="@color/overlay_light_90"
+                        android:layout_height="wrap_content"
+                        android:hint="Phone Number" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/spacing_large" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:layout_width="@dimen/spacing_mxlarge"
+                    android:layout_height="@dimen/spacing_mxlarge"
+                    android:layout_marginTop="@dimen/spacing_mlarge"
+                    android:background="@android:color/transparent"
+                    android:tint="@color/overlay_light_90"
+                    app:srcCompat="@drawable/ic_baseline_account_balance_24"
+                    tools:ignore="VectorDrawableCompat" />
+
+                <View
+                    android:layout_width="@dimen/spacing_large"
+                    android:layout_height="match_parent" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColorHint="@color/overlay_light_90">
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:layout_width="match_parent"
+                        android:id="@+id/bank"
+                        android:inputType="number"
+                        android:textColor="@color/overlay_light_90"
+                        android:layout_height="wrap_content"
+                        android:hint="Bank Account" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/spacing_large" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/imageButton2"
+                android:layout_width="@dimen/spacing_mxlarge"
+                android:layout_height="@dimen/spacing_mxlarge"
+                android:layout_marginTop="@dimen/spacing_mlarge"
+                android:background="@android:color/transparent"
+                android:tint="@color/overlay_light_90"
+                app:srcCompat="@drawable/ic_phone"
+                tools:ignore="VectorDrawableCompat" />
+
+            <View
+                android:layout_width="@dimen/spacing_large"
+                android:layout_height="match_parent" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/overlay_light_90">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:layout_width="match_parent"
+                    android:id="@+id/w_phone"
+                    android:inputType="number"
+                    android:textColor="@color/overlay_light_90"
+                    android:layout_height="wrap_content"
+                    android:hint="Winner Phone Number" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/spacing_large" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:layout_width="@dimen/spacing_mxlarge"
+                android:layout_height="@dimen/spacing_mxlarge"
+                android:layout_marginTop="@dimen/spacing_mlarge"
+                android:background="@android:color/transparent"
+                android:tint="@color/overlay_light_90"
+                app:srcCompat="@drawable/ic_baseline_assignment_24"
+                tools:ignore="VectorDrawableCompat" />
+
+            <View
+                android:layout_width="@dimen/spacing_large"
+                android:layout_height="match_parent" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColorHint="@color/overlay_light_90">
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:layout_width="match_parent"
+                        android:id="@+id/w_acc"
+                        android:textColor="@color/overlay_light_90"
+                        android:layout_height="wrap_content"
+                        android:hint="Winner Lotto Number" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/spacing_large" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+
+
+            <VideoView
+                android:id="@+id/videoView1"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:visibility="gone"
+
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true" />
+
+
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <View
+                android:layout_width="@dimen/spacing_large"
+                android:layout_height="match_parent" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/overlay_light_90">
+
+
+
+
+
+
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/upload"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:layout_gravity="center"
+                    android:tint="@color/colorPrimary"
+                    app:backgroundTint="@android:color/white"
+                    app:elevation="4dp"
+                    android:text="Upload Video"
+                    app:fabSize="normal"
+                    app:rippleColor="@android:color/white"
+                    app:srcCompat="@drawable/ic_baseline_cloud_upload_24"
+                    tools:ignore="VectorDrawableCompat" />
+
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+
+
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:id="@+id/sumbit"
+                android:text="submit"
+                android:theme="@style/Button.White.Primary" />
+
+
+
+
+
+            <View
+                android:layout_width="@dimen/spacing_large"
+                android:layout_height="match_parent" />
+
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_alignParentBottom="true"
+            app:menu="@menu/bottom_nav_menu"
+            app:itemBackground="@color/overlay_light_90"
+
+            app:itemIconTint="@drawable/drawer_item_color"
+            app:itemTextColor="@drawable/drawer_item_color" />
+
+
+
+
+    </RelativeLayout>
+
+
+
+</androidx.drawerlayout.widget.DrawerLayout>

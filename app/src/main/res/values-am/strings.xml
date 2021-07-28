@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">የሎተሪ መተግበሪያ</string>
+    <string name="title_activity_main2">ዋና እንቅስቃሴ</string>
+    <string name="title_home">ቤት</string>
+    <string name="title_Setting">ቅንብር</string>
+    <string name="Select">ቋንቋ ይምረጡ</string>
+    <string name="connection">
+ኢንተርኔት ግንኙነት የለም እባክዎ ግንኙነቱን ያንቁ እና መተግበሪያውን እንደገና ያስጀምሩ</string>
+    <string name="teme">ገጽታ ለውጥ</string>
+    <string name="Notifications">ማሳወቂያዎች</string>
+    <string name="newd">ሽልማቶች</string>
+        <string name="promo">ማስተዋወቂያ</string>
+    <string name="event">ክስተት</string>
+    <string name="More">ተጨማሪ</string>
+    <string name="Ask"> ጥያቄ ይጠይቁ</string>
+    <string name="faq">ተደጋግሞ የሚነሱ ጥያቄዎች</string>
+    <string name="priv">ግል  ፖሊሲ</string>
+    <string name="Nocon">
+ የኢንተርኔት ግንኙነት የለም
+ወደ ሴቲንግ ለመሄድ እሺን ይጫኑ</string>
+    <string name="project">ፕሮጀክቶች</string>
+    <string name="about">
+ስለ እኛ</string>
+    <string name="office">ቢሮ</string>
+    <string name="myApppointement">ቀጠሮዎች</string>
+    <string name="rate">ተመን</string>
+    <string name="help">ለእርዳታ</string>
+    <string name="contact">ለግንኙነት</string>
+    <string name="uploads_disabled">File uploads are disabled.</string>
+    <string name="choose_upload">Choose file for upload</string>
+    <string name="up">
+በመጪው ጊዜ ብሔራዊ ፕሮጀክት</string>
+
+    <string name="gena">ገናሌ ዳዋ የሃይድሮ ኤሌክትሪክ ኃይል ማመንጫ</string>
+    <string name="dinee">
+DINE ለኢትዮጵያ</string>
+    <string name="grandd">
+ታላቁ የኢትዮጵያ ህዳሴ ግድብ</string>
+    <string name="sure">
+እርግጠኛ ነዎት መውጣት ይፈልጋሉ</string>
+
+    <string name="ok">
+እሺ</string>
+    <string name="can">ሰርዝ</string>
+    <string name="con">ማረጋገጫ</string>
+    <string name="commnet">
+        አስተያየት ለመስጠት እዚህ ይጫኑ</string>
+    <string
+        name="messageWithLink"><a href="https://peaceanddignityforethiopians.com/">peaceanddignityforethiopians.com</a></string>
+
+    <string name="eng">እንግሊዝኛ</string>
+    <string name="amh">አማርኛ</string>
+    <string name="tig">ኦሮሚኛ</string>
+    <string name="oro">ትግርኛ</string>
+    <string name="Change">
+ቋንቋ ለመለወጥ</string>
+    <string name="title_activity_main3">MainActivity3</string>
+    <string name="tab_text_1">
+የሸገር ፕሮጀክቶች</string>
+    <string name="tab_text_2">
+ሌሎች ፕሮጀክቶች</string>
+    <string name="she">
+የሸገር ፕሮጀክቶች</string>
+    <string name="other">ሌሎች ፕሮጀክቶች</string>
+    <string name="mesob">
+መሶብ ታወር</string>
+    <string name="mesobb">መሶብ ታወር በአዲስ አበባ ቂርቆስ ክፍለ ከተማ በሞዛምቢክ ጎዳና ላይ የሚገኝ የ 70 ፎቅ ቅይጥ አጠቃቀም ልማት ዕቅድ ነው ፡፡ እንዲሁም የቱሪስት መስህብ ሆኖ እንዲያገለግል የሚጠበቀው ልማት እንደ “መሶብ” ቅርፅ ያለው ሲሆን ምግብ (ኢንጄራ - እርሾው ጠፍጣፋ ዳቦ) የሚቀመጥበት የኢትዮጵያ የቤት እቃ ነው ፡፡
+
+ፕሮጀክቱ እየተገነባ ያለው በኢትዮጵያ ባህልና ቱሪዝም ሚኒስቴር ነው ፡፡ እሱ በፅንሰ-ሃሳባዊ ደረጃ ውስጥ ስለሆነ ዋናው ተቋራጭ እና ሌሎች የፕሮጀክቱ ቡድን አባላት ገና አልተመረጡም ፡፡
+
+የዚህ የ 70 ፎቅ ልማት አጠቃላይ የመሬት ስፋት 50 ሺህ ካሬ ሜትር ሲሆን ቁመቱ 250 ሜትር ከፍታ ያለው ሲሆን አማካይ የ 70 ሜትር ቁመት ካለው የቪክቶሪያ ደሴት ኤኮ አትላንቲክ ከሚገኘው የአዙሪ ታወርስ በሦስት እጥፍ ይበልጣል ፡፡
+
+መሶብ የሚከተሉትን ያካትታል
+
+ሆቴል
+የገበያ አዳራሽ
+የባህል ማዕከል ፣ የሁሉም የኢትዮጵያ ክልሎች ተወካይ
+አንድ ጂም
+የአትክልት ቦታዎች
+የአትሌቲክስ ትራክ እና ፣
+የጎልፍ ክበብ።</string>
+    <string name="entoto">እንጦጦ የተፈጥሮ ፓርክ</string>
+    <string name="ent">
+        የኢትዮጵያ ጠቅላይ ሚኒስትር ዶ/ር ዐብይ አህመድ በቅርቡ በዋና ከተማዋ አዲስ አበባ በእንጦጦ ተራራ ላይ  አዲስ የቱሪስት መስህብ የሆነውን የእንጦጦ ፓርክ መርቀው ከፍተዋል።
+        አዲሱ የቱሪስት መስህብ ከአንድ አመት በፊት በጠቅላይ ሚኒስትሩ የተጀመረው የወንዝ ዳርቻወችን የማፅዳት እና በከተማዋ ውስጥ ያልታዩ አካባቢዎችን ወደ ቱሪስት መስህብነት ለመቀየር ከታቀዱት ወስጥ አንዱ ነው ፡፡
+
+ይህ  ፓርክ የሚገኘው በተለምዶ የአዲስ አበባ ሳንባ ተብሎ  በሚጠራው ከባህር ወለል በላይ ከ 2600 እስከ 3100 ሜትር  ከፍታ ላይ በሚገኘው የ እንጦጦ ደን  ውስጥ ነው።
+        ይህ ስፍራ የኢትዮጵያ ታዋቂ የረጅም ርቀት ሯጮች ለሥልጠና ሲጠቀሙበት ቆይተዋል ፡፡
+ፓርኩ በውስጡ ካፌዎች ፣ ምግብ ቤቶች እና መዝናኛዎች  ሲኖሩት እንደ ካልዲስ እና ቶሞካ የመሳሰሉ  ምርቶች በመናፈሻው ውስጥ ጎብኝዎች እውነተኛው የኢትዮጵያን ቡና እንዲያጣጥሙ ያደርጋል፡፡
+        ከዚህ ቀደም በዚህ ደን ውስጥ የእሳት እንጨት በመሰብሰብ ኑሯቸውን ይገፉ የነበሩ ከ400 በላይ ለሚሆኑ  የ አከባቢው እናቶች ፓርኩ ውስጥ በተለያየ የሲራ ዘርፍ ተሰማርተው እንዲሰሩ እድል ተፈጥሮላቸዋል።
+    </string>
+    <string name="very_long_lorem_ipsum">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dolor risus, aliquet a erat quis, viverra molestie orci. Suspendisse vehicula porta libero. Nam tincidunt nulla ipsum, vel iaculis risus scelerisque sed. Phasellus venenatis, enim vel placerat blandit, leo eros bibendum erat, at auctor mauris diam ac risus. Aenean sit amet congue neque, sit amet condimentum elit. Fusce lacinia massa vel nisl scelerisque, in scelerisque dolor elementum. Vivamus leo enim, congue dictum congue vitae, porttitor id purus. Sed eu ultricies erat. Morbi hendrerit, mi ac volutpat commodo, magna turpis pretium nibh, at fringilla eros lorem quis tellus. Praesent porttitor purus nibh, ac vestibulum massa fringilla vel. Pellentesque dapibus nulla quis luctus dictum. In scelerisque ut ex sed facilisis. Nunc eu finibus nulla, ut hendrerit sem. Suspendisse accumsan risus vel diam fringilla iaculis.
+        \n\nQuisque facilisis finibus aliquam. Sed mattis, dui fringilla ornare finibus, orci odio blandit risus, ut maximus dui odio non leo. Donec laoreet lacus nisi, a mollis velit suscipit ac. Quisque faucibus ut nisl in congue. Nam sagittis consectetur tempus. Suspendisse eget posuere dui. Donec ultricies velit ex, vel cursus odio sollicitudin in. Nullam faucibus auctor ligula, eu rhoncus dui facilisis a. Curabitur vel feugiat est. Quisque congue at enim eleifend ultrices. Proin dapibus risus lorem, nec condimentum nunc consequat vitae. Quisque sapien lorem, vestibulum vitae justo eget, fringilla eleifend nisi.
+        \n\nMauris ultricies augue sit amet est sollicitudin laoreet. Fusce ut congue felis. Fusce dictum tristique elit nec iaculis. Mauris sodales tempus fringilla. Fusce nec nunc tempus, tempor sapien sit amet, ultricies erat. Mauris ultrices ac lorem ultrices facilisis. Nam pharetra, nisi a imperdiet interdum, nunc justo ultricies nisl, a laoreet massa dui vel enim. Pellentesque et magna ac tellus ullamcorper malesuada a ac nisl. Curabitur id est et neque convallis accumsan. Aliquam eleifend varius massa. Curabitur eu finibus tortor.
+        \n\nVivamus aliquam nisl rutrum orci volutpat porta in ornare est. Quisque ligula ipsum, vulputate id aliquam vitae, semper vitae orci. Nam non pulvinar ligula, eget tincidunt ante. Quisque sapien massa, varius tempus pretium id, vehicula at magna. Ut ut ultrices augue. Nam nec ullamcorper tellus, at finibus lectus. Fusce vel iaculis mauris, id porta nulla. Aenean ac mollis sapien. Morbi imperdiet augue tempus nulla luctus, sit amet feugiat purus elementum.
+        \n\nIn sit amet rutrum diam. Vivamus laoreet aliquam ipsum eget pretium. Mauris sagittis non elit quis fermentum. Aenean at diam nec tortor maximus rutrum. Sed nec nulla volutpat quam suscipit varius non at erat. Pellentesque non euismod diam, nec dapibus quam. Aliquam et posuere massa. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam eu nibh sed diam posuere tincidunt et non felis. Aliquam sodales facilisis tortor, at maximus ante varius quis.
+       </string>
+    <string name="medium_lorem_ipsum">Quisque imperdiet nunc at massa dictum volutpat. Etiam id orci ipsum. Integer id ex dignissim</string>
+    <string name="dine">
+   ፕሮግራሙ  ልሶስት ፕሮጀክቶች ገንዘብ ያሰባስባል – በጎርጎራ ፣ ወንቺ እና ኮይሻ ፡፡ አዲሱ
+   ተነሳሽነት በጥቅምት ወር የመጀመሪያዎቹ 10 ሚሊየን ብር ቪአይፒ እና አምስት ሚሊዮን ብር
+        የቪአይፒ እራት መርሃ ግብሮች የሚስተናገዱ ሲሆን በሁለት ወራቶች ውስጥ 3 ቢሊዮን ብር
+        ለመሰብሰብ ያለመ ነው ፡፡
+
+    </string>
+    <string name="gen">
+       በቻይና ኩባንያ የተገነባው – ገናሌ ዳዋ 3 የሃይድሮ ኤሌክትሪክ ፋብሪካ አጠቃላይ የ 451m የአሜሪካን ዶላር
+       ኢንቬስትሜንት የወሰደ ሲሆን ከዚህ ውስጥ ወደ 67.8 ሚሊዮን ዶላር ገደማ በኢትዮጵያ መንግስት ተሸፍኗል ፡፡
+        ቀሪው በብድር ተሸፍኗል ፡፡
+    </string>
+    <string name="grand">
+
+        ታላቁ የኢትዮጵያ ህዳሴ ግድብ ግንባታ በ2004ዓም በ80 ቢሊዬን ብር ተጀመረ ይህ የታላቁ የኢትዮጵያ ህዳሴ
+        ግድብ ፕሮጀክት እስከ ሐምሌ 2017 ይጠናቀቃል ተብሎ ይጠበቃል በመሆኑም የኢትዮጵያ ህዝብ እና መንግስት
+        ለፕሮጀክቱ የገንዘብ ድጋፍ ያደርጋሉ፡፡
+
+
+    </string>
+    <string name="vis">
+የእኛ ራዕይ</string>
+    <string name="viss">• የመንግስት ተቋማት አገልግሎት አሰጣጥ በታማኝነት ፣ በጥረትና በቅልጥፍና እንዲሆን   ማስቻል  </string>
+    <string name="aboutus">
+ስለ እኛ</string>
+    <string name="aboutuss">
+የሰላም ሚኒስቴር ጽህፈት ቤት ኢትዮጵያ በአሁኑ ወቅት እያካሄደች ያለችውን የተሃድሶ እንቅስቃሴ በሰላም ግንባታ ርምጃዎች ፣ የህግ የበላይነትን በማስፈን እና በማጠናከር እንዲሁም የሰላምና ደህንነት ትኩረት ያደረጉ ዘርፎችን አቅም በመገንባት ለማስቀጠል ተችሏል ፡፡
+        በተጨማሪም ጽህፈት ቤቱ ቀደም ሲል የነበሩትን ማህበራዊ ልምዶች በመጠቀም የሰላም ግንባታ ዓላማዎችን የበለጠ ለማጥበብ እና ለማስቀጠል እንዲሁም ብሄራዊ መግባባትን የመፍጠር ተልእኮ ተሰጥቶታል ፡፡</string>
+    <string name="our">ተልእኳችን</string>
+    <string name="ourr">
+         • በመንግስት ተቋማት ላይ የደንበኞችን አስተያየት በአግባቡ መቀበል \n\
+         • የመንግሥት ተቋማትን አገልግሎት ዘመናዊ ማድረግ እና ማቀላጠፍ \n\
+         • በመንግስት ተቋማት ውስጥ ወንጀለኞችን በሕግ ተጠያቂ ማድረግ \n\
+        • በህዝብ እና በመንግስት ተቋማት መካከል ያለውን ልዩነት ለማጥበብ እና በአንድነት አብሮ ለመስራት ማስቻል \n\
+</string>
+    <string name="ver">ስሪት</string>
+    <string name="last">መጨረሻ የተሻሻለው</string>
+
+    <string name="contactus">
+አግኙን</string>
+    <string name="contactuss">ግጭቶችን ለመከላከል እና ለመፍታት የተቋቋመ  ፡፡ እንዲሁም የተረጋጋ ሀገር ለመፍጠር በክልሎች መካከል ፍትሃዊ ልማት ለማምጣት ፡፡ ለበለጠ መረጃ እኛን ማነጋገር ይችላሉ</string>
+
+    <string name="ourcon">
+የእኛ አድራሻ</string>
+    <string name="fb">
+ፌስቡክ</string>
+    <string name="li">ሊንክኔድ</string>
+    <string name="tw">ትዊተር</string>
+    <string name="in">ኢንስታግራም</string>
+
+    <string name="more">ተጨማሪ መረጃ</string>
+
+    <string name="news">ዜና</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="step_of">Step %1$d of %2$d</string>
+    <string name="section_format">Section : %1$d</string>
+    <string name="GOT_IT">GOT_IT</string>
+    <string name="NEXT">NEXT</string>
+    <string name="blind">ማየት ለተሳናቸዉ</string>
+</resources>

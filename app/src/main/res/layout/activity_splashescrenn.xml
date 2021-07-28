@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:id="@+id/cl"
+    tools:context=".splashescrenn">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/sp"
+        android:layout_marginTop="300px"
+        android:text="Online Lottery System"
+        android:textColor="@color/dark"
+        android:textSize="22dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:fontFamily="@font/hiwua"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/sp2"
+        android:layout_marginTop="400px"
+        android:text="የሎተሪ መተግበሪያ"
+        android:textColor="@color/dark"
+        android:textSize="22dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:fontFamily="@font/hiwua"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="272dp"
+        android:layout_height="272dp"
+        android:src="@drawable/lotto"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="30dp"
+        android:indeterminateTintMode="src_atop"
+        android:indeterminateTint="@color/dark"
+        android:backgroundTint="@color/dark"
+        android:foregroundTint="@color/dark"
+        app:layout_constraintTop_toBottomOf="@id/imageView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
