@@ -4,24 +4,38 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.annotation.TargetApi;
+import android.app.Activity;
+import android.content.ActivityNotFoundException;
 import android.content.ComponentName;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
+import android.net.http.SslError;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
+import android.speech.RecognizerIntent;
 import android.text.Html;
 import android.view.MenuItem;
 import android.view.View;
+import android.webkit.JsResult;
+import android.webkit.SslErrorHandler;
+import android.webkit.ValueCallback;
+import android.webkit.WebChromeClient;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.MediaController;
@@ -41,6 +55,10 @@ import com.google.android.material.navigation.NavigationView;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.File;
+import java.lang.reflect.Method;
+import java.net.URL;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -50,18 +68,44 @@ public class uploadVideo extends AppCompatActivity {
 
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle toggle3;
-    int SELECT_VIDEO_REQUEST = 1;
-    String selectedVideoPath;
-    Button submit;
-    VideoView videoView;
-    MediaController mc;
-    EditText fullname,phone,bank,w_ph,w_acc;
+    private     WebView webView;
 
-
+    ProgressBar progressBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_upload_video);
+
+
+
+
+
+
+        progressBar = findViewById(R.id.pb);
+        webView   = (WebView) findViewById(R.id.ratingg);
+
+
+
+        initWebView(webView);
+        webView.loadUrl("http://192.168.8.100:90/upload-video"); // TODO input your url
+
+        webView.setWebViewClient(
+                new SSLTolerentWebViewClient()
+        );
+
+
+//        WebSettings webSettings = webView.getSettings();
+//        webSettings.setJavaScriptEnabled(true);
+//        webView.getSettings().setUseWideViewPort(true);
+//        webView.getSettings().setLoadWithOverviewMode(true);
+//        webView.getSettings().setSupportZoom(true);
+//        webView.getSettings().setBuiltInZoomControls(true);
+//        webView.getSettings().setDisplayZoomControls(false);
+//        webView.setVerticalScrollBarEnabled(true);
+//        webView.setHorizontalScrollBarEnabled(true);
+//
+//        webView.loadUrl("https://peaceanddignityforethiopians.com/report/");
+
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle(getResources().getString(R.string.app_name));
@@ -118,55 +162,28 @@ public class uploadVideo extends AppCompatActivity {
         });
 
 
-        FloatingActionButton upload = (FloatingActionButton) findViewById(R.id.upload);
-
-         fullname = (EditText) findViewById(R.id.fullname);
-        fullname = (EditText) findViewById(R.id.phone);
-         bank = (EditText) findViewById(R.id.bank);
-         w_ph = (EditText) findViewById(R.id.w_phone);
-         w_acc = (EditText) findViewById(R.id.w_acc);
 
 
 
 
-        upload.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
 
-                boolean fieldsOK = validate(new EditText[] { fullname, fullname, bank,w_ph,w_acc });
-                if (fieldsOK==true)
-                {
-                    Intent intent = new Intent(Intent.ACTION_PICK);
-                    intent.setType("video/*");
+    }
 
-                    intent.setAction(Intent.ACTION_GET_CONTENT);
-                    startActivityForResult(Intent.createChooser(intent, "Select Video"), SELECT_VIDEO_REQUEST);
-                }
-                else {
-                    SweetAlertDialog pDialogg = new SweetAlertDialog(uploadVideo.this, SweetAlertDialog.ERROR_TYPE);
+    private void webVView() {
 
-                    pDialogg.setTitleText("please complete the form");
 
-                    pDialogg.setConfirmText(new String(getString(R.string.ok)));
-                    pDialogg.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
-                        @Override
-                        public void onClick(SweetAlertDialog sDialog) {
+        progressBar = findViewById(R.id.pb);
+        WebView webView = (WebView) findViewById(R.id.ratingg);
 
-                            pDialogg.dismiss();
-                            //checkConnection();
-                        }
-                    })
-                            .setCancelButton((new String(getString(R.string.can))), new SweetAlertDialog.OnSweetClickListener() {
-                                @Override
-                                public void onClick(SweetAlertDialog sDialog) {
-                                    sDialog.dismissWithAnimation();
+        initWebView(webView);
+        webView.loadUrl("http://192.168.8.100:90/upload-video"); // TODO input your url
 
-                                }
-                            })
-                            .show();
-                }
 
+        webView.getSettings().setJavaScriptEnabled(true);
+        webView.setWebViewClient(new android.webkit.WebViewClient(){
+
+            public void onPageFinished(WebView view, String url){
 
 
 
@@ -175,159 +192,452 @@ public class uploadVideo extends AppCompatActivity {
 
 
 
+
+
+    }
+    private final static Object methodInvoke(Object obj, String method, Class<?>[] parameterTypes, Object[] args) {
+        try {
+            Method m = obj.getClass().getMethod(method, new Class[] { boolean.class });
+            m.invoke(obj, args);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return null;
     }
 
+    private void initWebView(WebView webView) {
 
-//    private void postDataUsingVolley(String name, String job) {
-//        // url to post our data
-//        String url = "https://reqres.in/api/users";
-//
-//
-//        // creating a new variable for our request queue
-//        RequestQueue queue = Volley.newRequestQueue(uploadVideo.this);
-//
-//        // on below line we are calling a string
-//        // request method to post the data to our API
-//        // in this we are calling a post method.
-//        StringRequest request = new StringRequest(Request.Method.POST, url, new com.android.volley.Response.Listener<String>() {
-//            @Override
-//            public void onResponse(String response) {
-//                // inside on response method we are
-//                // hiding our progress bar
-//                // and setting data to edit text as empty
-//
-//                // on below line we are displaying a success toast message.
-//                Toast.makeText(uploadVideo.this, "Data added to API", Toast.LENGTH_SHORT).show();
-//                try {
-//                    // on below line we are passing our response
-//                    // to json object to extract data from it.
-//                    JSONObject respObj = new JSONObject(response);
-//
-//                    // below are the strings which we
-//                    // extract from our json object.
-//                    String name = respObj.getString("name");
-//                    String job = respObj.getString("job");
-//
-//                    // on below line we are setting this string s to our text view.
-//                } catch (JSONException e) {
-//                    e.printStackTrace();
-//                }
-//            }
-//        }, new com.android.volley.Response.ErrorListener() {
-//            @Override
-//            public void onErrorResponse(VolleyError error) {
-//                // method to handle errors.
-//                Toast.makeText(uploadVideo.this, "Fail to get response = " + error, Toast.LENGTH_SHORT).show();
-//            }
-//        }) {
-//            @Override
-//            protected Map<String, String> getParams() {
-//                // below line we are creating a map for
-//                // storing our values in key and value pair.
-//                Map<String, String> params = new HashMap<String, String>();
-//
-//                // on below line we are passing our key
-//                // and value pair to our parameters.
-//                params.put("name", name);
-//                params.put("job", job);
-//
-//                // at last we are
-//                // returning our params.
-//                return params;
-//            }
-//        };
-//        // below line is to make
-//        // a json object request.
-//        queue.add(request);
-//    }
+        WebSettings settings = webView.getSettings();
 
-    private boolean validate(EditText[] fields){
-        for(int i = 0; i < fields.length; i++){
-            EditText currentField = fields[i];
-            if(currentField.getText().toString().length() <= 0){
-                return false;
+        settings.setJavaScriptEnabled(true);
+        settings.setAllowFileAccess(true);
+        settings.setDomStorageEnabled(true);
+        settings.setCacheMode(WebSettings.LOAD_NO_CACHE);
+        settings.setLoadWithOverviewMode(true);
+        settings.setUseWideViewPort(true);
+        settings.setSupportZoom(true);
+        // settings.setPluginsEnabled(true);
+        methodInvoke(settings, "setPluginsEnabled", new Class[] { boolean.class }, new Object[] { true });
+        // settings.setPluginState(PluginState.ON);
+        methodInvoke(settings, "setPluginState", new Class[] { WebSettings.PluginState.class }, new Object[] { WebSettings.PluginState.ON });
+        // settings.setPluginsEnabled(true);
+        methodInvoke(settings, "setPluginsEnabled", new Class[] { boolean.class }, new Object[] { true });
+        // settings.setAllowUniversalAccessFromFileURLs(true);
+        methodInvoke(settings, "setAllowUniversalAccessFromFileURLs", new Class[] { boolean.class }, new Object[] { true });
+        // settings.setAllowFileAccessFromFileURLs(true);
+        methodInvoke(settings, "setAllowFileAccessFromFileURLs", new Class[] { boolean.class }, new Object[] { true });
+        webView.setWebViewClient(new WebViewClient());
+        webView.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
+        webView.clearHistory();
+        webView.clearFormData();
+        webView.clearCache(true);
+
+        webView.setWebChromeClient(new MyWebChromeClient());
+        // webView.setDownloadListener(downloadListener);
+
+        webView.setWebViewClient(new WebViewClient() {
+
+            @Override
+            public void onPageStarted(WebView view, String url, Bitmap favicon) {
+                super.onPageStarted(view, url, favicon);
+                findViewById(R.id.pb).setVisibility(View.VISIBLE);
             }
-        }
-        return true;
+
+            @Override
+            public void onPageFinished(WebView view, String url) {
+                super.onPageFinished(view, url);
+                findViewById(R.id.pb).setVisibility(View.GONE);
+            }
+
+        });
     }
 
-    private static Context context;
-    private Uri mVideoURI;
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode == RESULT_OK) {
+    UploadHandler mUploadHandler;
 
-            Uri selectedVideoUri = data.getData();
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
 
-            mVideoURI = Uri.parse(String.valueOf(selectedVideoUri));
 
-            String selectedVideoPath = getPath(selectedVideoUri, uploadVideo.this);
-            if (selectedVideoPath != null) {
 
-                VideoView videoView =(VideoView)findViewById(R.id.videoView1);
-                videoView.setVisibility(View.VISIBLE);
-                videoView.setVideoURI(selectedVideoUri);
-                videoView.start();
-                MediaController mediaController= new MediaController(this);
-                mediaController.setAnchorView(videoView);
 
+
+        super.onActivityResult(requestCode, resultCode, intent);
+
+
+
+        if (requestCode == Controller.FILE_SELECTED) {
+            // Chose a file from the file picker.
+            if (mUploadHandler != null) {
+                mUploadHandler.onResult(resultCode, intent);
             }
-            else {
-                Toast.makeText(this, "invalid Path", Toast.LENGTH_SHORT).show();
+        }
+
+        super.onActivityResult(requestCode, resultCode, intent);
+     //   webVView();
+    }
+
+    class MyWebChromeClient extends WebChromeClient {
+        public MyWebChromeClient() {
+
+        }
+
+        private String getTitleFromUrl(String url) {
+            String title = url;
+            try {
+                URL urlObj = new URL(url);
+                String host = urlObj.getHost();
+                if (host != null && !host.isEmpty()) {
+                    return urlObj.getProtocol() + "://" + host;
+                }
+                if (url.startsWith("file:")) {
+                    String fileName = urlObj.getFile();
+                    if (fileName != null && !fileName.isEmpty()) {
+                        return fileName;
+                    }
+                }
+            } catch (Exception e) {
+                // ignore
             }
 
+            return title;
+        }
+
+        @Override
+        public boolean onJsAlert(WebView view, String url, String message, final JsResult result) {
+            String newTitle = getTitleFromUrl(url);
+
+            new AlertDialog.Builder(uploadVideo.this).setTitle(newTitle).setMessage(message).setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    result.confirm();
+                }
+            }).setCancelable(false).create().show();
+            return true;
+            // return super.onJsAlert(view, url, message, result);
+        }
+
+        @Override
+        public boolean onJsConfirm(WebView view, String url, String message, final JsResult result) {
+
+            String newTitle = getTitleFromUrl(url);
+
+            new AlertDialog.Builder(uploadVideo.this).setTitle(newTitle).setMessage(message).setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    result.confirm();
+                }
+            }).setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int which) {
+                    result.cancel();
+                }
+            }).setCancelable(false).create().show();
+            return true;
+
+            // return super.onJsConfirm(view, url, message, result);
+        }
+
+        // Android 2.x
+        public void openFileChooser(ValueCallback<Uri> uploadMsg) {
+            openFileChooser(uploadMsg, "");
+        }
+
+        // Android 3.0
+        public void openFileChooser(ValueCallback<Uri> uploadMsg, String acceptType) {
+            openFileChooser(uploadMsg, "", "filesystem");
+        }
+
+        // Android 4.1
+        public void openFileChooser(ValueCallback<Uri> uploadMsg, String acceptType, String capture) {
+            mUploadHandler = new UploadHandler(new Controller());
+            mUploadHandler.openFileChooser(uploadMsg, acceptType, capture);
+        }
+
+        // Android 4.4, 4.4.1, 4.4.2
+        // openFileChooser function is not called on Android 4.4, 4.4.1, 4.4.2,
+        // you may use your own java script interface or other hybrid framework.
+
+        // Android 5.0.1
+        public boolean onShowFileChooser(
+                WebView webView, ValueCallback<Uri[]> filePathCallback,
+                FileChooserParams fileChooserParams) {
+
+            String acceptTypes[] = new String[0];
+            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+                acceptTypes = fileChooserParams.getAcceptTypes();
+            }
+
+            String acceptType = "";
+            for (int i = 0; i < acceptTypes.length; ++ i) {
+                if (acceptTypes[i] != null && acceptTypes[i].length() != 0)
+                    acceptType += acceptTypes[i] + ";";
+            }
+            if (acceptType.length() == 0)
+                acceptType = "*/*";
+
+            final ValueCallback<Uri[]> finalFilePathCallback = filePathCallback;
+
+            ValueCallback<Uri> vc = new ValueCallback<Uri>() {
+
+                @Override
+                public void onReceiveValue(Uri value) {
+
+                    Uri[] result;
+                    if (value != null)
+                        result = new Uri[]{value};
+                    else
+                        result = null;
+
+                    finalFilePathCallback.onReceiveValue(result);
+
+                }
+            };
+
+            openFileChooser(vc, acceptType, "filesystem");
+
+
+            return true;
+        }
+    };
+
+    class Controller {
+        final static int FILE_SELECTED = 4;
+
+        Activity getActivity() {
+            return uploadVideo.this;
         }
     }
 
-    public String getPath(Uri uri, Context context) {
-        String filePath = null;
-        final boolean isKitKat = Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT;
-        if(isKitKat){
-            filePath = generateFromKitkat(uri,context);
+    class UploadHandler {
+        /*
+         * The Object used to inform the WebView of the file to upload.
+         */
+        private ValueCallback<Uri> mUploadMessage;
+        private String mCameraFilePath;
+        private boolean mHandled;
+        private boolean mCaughtActivityNotFoundException;
+        private Controller mController;
+        public UploadHandler(Controller controller) {
+            mController = controller;
         }
-
-        if(filePath != null){
-            return filePath;
+        String getFilePath() {
+            return mCameraFilePath;
         }
-
-        Cursor cursor = context.getContentResolver().query(uri, new String[] { MediaStore.MediaColumns.DATA }, null, null, null);
-
-        if (cursor != null) {
-            if (cursor.moveToFirst()) {
-                int columnIndex = cursor.getColumnIndexOrThrow(MediaStore.MediaColumns.DATA);
-                filePath = cursor.getString(columnIndex);
+        boolean handled() {
+            return mHandled;
+        }
+        void onResult(int resultCode, Intent intent) {
+            if (resultCode == Activity.RESULT_CANCELED && mCaughtActivityNotFoundException) {
+                // Couldn't resolve an activity, we are going to try again so skip
+                // this result.
+                mCaughtActivityNotFoundException = false;
+                return;
             }
-            cursor.close();
+            Uri result = intent == null || resultCode != Activity.RESULT_OK ? null
+                    : intent.getData();
+            // As we ask the camera to save the result of the user taking
+            // a picture, the camera application does not return anything other
+            // than RESULT_OK. So we need to check whether the file we expected
+            // was written to disk in the in the case that we
+            // did not get an intent returned but did get a RESULT_OK. If it was,
+            // we assume that this result has came back from the camera.
+            if (result == null && intent == null && resultCode == Activity.RESULT_OK) {
+                File cameraFile = new File(mCameraFilePath);
+                if (cameraFile.exists()) {
+                    result = Uri.fromFile(cameraFile);
+                    // Broadcast to the media scanner that we have a new photo
+                    // so it will be added into the gallery for the user.
+                    mController.getActivity().sendBroadcast(
+                            new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, result));
+                }
+            }
+            mUploadMessage.onReceiveValue(result);
+            mHandled = true;
+            mCaughtActivityNotFoundException = false;
         }
-        return filePath == null ? uri.getPath() : filePath;
+        void openFileChooser(ValueCallback<Uri> uploadMsg, String acceptType, String capture) {
+            final String imageMimeType = "image/*";
+            final String videoMimeType = "video/*";
+            final String audioMimeType = "audio/*";
+            final String mediaSourceKey = "capture";
+            final String mediaSourceValueCamera = "camera";
+            final String mediaSourceValueFileSystem = "filesystem";
+            final String mediaSourceValueCamcorder = "camcorder";
+            final String mediaSourceValueMicrophone = "microphone";
+            // According to the spec, media source can be 'filesystem' or 'camera' or 'camcorder'
+            // or 'microphone' and the default value should be 'filesystem'.
+            String mediaSource = mediaSourceValueFileSystem;
+            if (mUploadMessage != null) {
+                // Already a file picker operation in progress.
+                return;
+            }
+            mUploadMessage = uploadMsg;
+            // Parse the accept type.
+            String params[] = acceptType.split(";");
+            String mimeType = params[0];
+            if (capture.length() > 0) {
+                mediaSource = capture;
+            }
+            if (capture.equals(mediaSourceValueFileSystem)) {
+                // To maintain backwards compatibility with the previous implementation
+                // of the media capture API, if the value of the 'capture' attribute is
+                // "filesystem", we should examine the accept-type for a MIME type that
+                // may specify a different capture value.
+                for (String p : params) {
+                    String[] keyValue = p.split("=");
+                    if (keyValue.length == 2) {
+                        // Process key=value parameters.
+                        if (mediaSourceKey.equals(keyValue[0])) {
+                            mediaSource = keyValue[1];
+                        }
+                    }
+                }
+            }
+            //Ensure it is not still set from a previous upload.
+            mCameraFilePath = null;
+            if (mimeType.equals(imageMimeType)) {
+                if (mediaSource.equals(mediaSourceValueCamera)) {
+                    // Specified 'image/*' and requested the camera, so go ahead and launch the
+                    // camera directly.
+                    startActivity(createCameraIntent());
+                    return;
+                } else {
+                    // Specified just 'image/*', capture=filesystem, or an invalid capture parameter.
+                    // In all these cases we show a traditional picker filetered on accept type
+                    // so launch an intent for both the Camera and image/* OPENABLE.
+                    Intent chooser = createChooserIntent(createCameraIntent());
+                    chooser.putExtra(Intent.EXTRA_INTENT, createOpenableIntent(imageMimeType));
+                    startActivity(chooser);
+                    return;
+                }
+            } else if (mimeType.equals(videoMimeType)) {
+                if (mediaSource.equals(mediaSourceValueCamcorder)) {
+                    // Specified 'video/*' and requested the camcorder, so go ahead and launch the
+                    // camcorder directly.
+                    startActivity(createCamcorderIntent());
+                    return;
+                } else {
+                    // Specified just 'video/*', capture=filesystem or an invalid capture parameter.
+                    // In all these cases we show an intent for the traditional file picker, filtered
+                    // on accept type so launch an intent for both camcorder and video/* OPENABLE.
+                    Intent chooser = createChooserIntent(createCamcorderIntent());
+                    chooser.putExtra(Intent.EXTRA_INTENT, createOpenableIntent(videoMimeType));
+                    startActivity(chooser);
+                    return;
+                }
+            } else if (mimeType.equals(audioMimeType)) {
+                if (mediaSource.equals(mediaSourceValueMicrophone)) {
+                    // Specified 'audio/*' and requested microphone, so go ahead and launch the sound
+                    // recorder.
+                    startActivity(createSoundRecorderIntent());
+                    return;
+                } else {
+                    // Specified just 'audio/*',  capture=filesystem of an invalid capture parameter.
+                    // In all these cases so go ahead and launch an intent for both the sound
+                    // recorder and audio/* OPENABLE.
+                    Intent chooser = createChooserIntent(createSoundRecorderIntent());
+                    chooser.putExtra(Intent.EXTRA_INTENT, createOpenableIntent(audioMimeType));
+                    startActivity(chooser);
+                    return;
+                }
+            }
+            // No special handling based on the accept type was necessary, so trigger the default
+            // file upload chooser.
+            startActivity(createDefaultOpenableIntent());
+        }
+        private void startActivity(Intent intent) {
+            try {
+                mController.getActivity().startActivityForResult(intent, Controller.FILE_SELECTED);
+            } catch (ActivityNotFoundException e) {
+                // No installed app was able to handle the intent that
+                // we sent, so fallback to the default file upload control.
+                try {
+                    mCaughtActivityNotFoundException = true;
+                    mController.getActivity().startActivityForResult(createDefaultOpenableIntent(),
+                            Controller.FILE_SELECTED);
+                } catch (ActivityNotFoundException e2) {
+                    // Nothing can return us a file, so file upload is effectively disabled.
+                    Toast.makeText(mController.getActivity(), R.string.uploads_disabled,
+                            Toast.LENGTH_LONG).show();
+                }
+            }
+        }
+        private Intent createDefaultOpenableIntent() {
+            // Create and return a chooser with the default OPENABLE
+            // actions including the camera, camcorder and sound
+            // recorder where available.
+            Intent i = new Intent(Intent.ACTION_GET_CONTENT);
+            i.addCategory(Intent.CATEGORY_OPENABLE);
+            i.setType("*/*");
+            Intent chooser = createChooserIntent(createCameraIntent(), createCamcorderIntent(),
+                    createSoundRecorderIntent());
+            chooser.putExtra(Intent.EXTRA_INTENT, i);
+            return chooser;
+        }
+        private Intent createChooserIntent(Intent... intents) {
+            Intent chooser = new Intent(Intent.ACTION_CHOOSER);
+            chooser.putExtra(Intent.EXTRA_INITIAL_INTENTS, intents);
+            chooser.putExtra(Intent.EXTRA_TITLE,
+                    mController.getActivity().getResources()
+                            .getString(R.string.choose_upload));
+            return chooser;
+        }
+        private Intent createOpenableIntent(String type) {
+            Intent i = new Intent(Intent.ACTION_GET_CONTENT);
+            i.addCategory(Intent.CATEGORY_OPENABLE);
+            i.setType(type);
+            return i;
+        }
+        private Intent createCameraIntent() {
+            Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+            File externalDataDir = Environment.getExternalStoragePublicDirectory(
+                    Environment.DIRECTORY_DCIM);
+            File cameraDataDir = new File(externalDataDir.getAbsolutePath() +
+                    File.separator + "browser-photos");
+            cameraDataDir.mkdirs();
+            mCameraFilePath = cameraDataDir.getAbsolutePath() + File.separator +
+                    System.currentTimeMillis() + ".jpg";
+            cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(new File(mCameraFilePath)));
+            return cameraIntent;
+        }
+        private Intent createCamcorderIntent() {
+            return new Intent(MediaStore.ACTION_VIDEO_CAPTURE);
+        }
+        private Intent createSoundRecorderIntent() {
+            return new Intent(MediaStore.Audio.Media.RECORD_SOUND_ACTION);
+        }
     }
 
-    @TargetApi(19)
-    private String generateFromKitkat(Uri uri,Context context){
-        String filePath = null;
-        if(DocumentsContract.isDocumentUri(context, uri)){
-            String wholeID = DocumentsContract.getDocumentId(uri);
-
-            String id = wholeID.split(":")[1];
-
-            String[] column = { MediaStore.Audio.Media.DATA };
-            String sel = MediaStore.Audio.Media._ID + "=?";
-
-            Cursor cursor = context.getContentResolver().
-                    query(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI,
-                            column, sel, new String[]{ id }, null);
-
-
-
-            int columnIndex = cursor.getColumnIndex(column[0]);
-
-            if (cursor.moveToFirst()) {
-                filePath = cursor.getString(columnIndex);
-            }
-
-            cursor.close();
+    public class WebViewClient extends android.webkit.WebViewClient {
+        @Override
+        public void onPageStarted(WebView view, String url, Bitmap favicon) {
+            super.onPageStarted(view, url, favicon);
         }
-        return filePath;
+
+        @Override
+        public boolean shouldOverrideUrlLoading(WebView view, String url) {
+
+
+            view.loadUrl(url);
+            return true;
+        }
+
+        @Override
+        public void onPageFinished(WebView view, String url) {
+            super.onPageFinished(view, url);
+            progressBar.setVisibility(View.GONE);
+        }
+    }
+
+    private class SSLTolerentWebViewClient extends WebViewClient {
+
+        @Override
+        public void onReceivedSslError(WebView view, SslErrorHandler handler, SslError error) {
+            handler.proceed(); // Ignore SSL certificate errors
+        }
+
     }
 
 }

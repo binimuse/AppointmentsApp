@@ -233,7 +233,7 @@ public class search  extends AppCompatActivity  {
 
          String postUrl = "http://192.168.8.100:90/api/check-result/"+content;
         RequestQueue requestQueue = Volley.newRequestQueue(this);
-
+        String mes;
         StringRequest request = new StringRequest(Request.Method.GET, postUrl, new Response.Listener<String>() {
             @RequiresApi(api = Build.VERSION_CODES.KITKAT)
             @Override
@@ -291,9 +291,63 @@ public class search  extends AppCompatActivity  {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
+                Log.d("jh", "Error: " + error
+                        + "\nStatus Code " + error.networkResponse.statusCode
+                        + "\nResponse Data " + error.networkResponse.data
+                        + "\nCause " + error.getCause()
+                        + "\nmessage" + error.getMessage());
+                if (error.networkResponse.statusCode==400)
+                {
+                    SweetAlertDialog pDialogg2 = new SweetAlertDialog(search.this, SweetAlertDialog.WARNING_TYPE);
+
+                    pDialogg2.setTitleText("you didn't won");
+                    pDialogg2.setCustomImage(R.drawable.lotto);
+                    pDialogg2.setCancelButton((new String(getString(R.string.can))), new SweetAlertDialog.OnSweetClickListener() {
+                        @Override
+                        public void onClick(SweetAlertDialog sDialog) {
+                            sDialog.dismissWithAnimation();
+
+                        }
+                    })
+                            .show();
+
+                }
+                else if(error.networkResponse.statusCode==500)
+                {
+
+                    SweetAlertDialog pDialogg2 = new SweetAlertDialog(search.this, SweetAlertDialog.WARNING_TYPE);
+
+                    pDialogg2.setTitleText("Player with this number doesn't exist");
+                    pDialogg2.setCustomImage(R.drawable.lotto);
+                    pDialogg2.setCancelButton((new String(getString(R.string.can))), new SweetAlertDialog.OnSweetClickListener() {
+                        @Override
+                        public void onClick(SweetAlertDialog sDialog) {
+                            sDialog.dismissWithAnimation();
+
+                        }
+                    })
+                            .show();
+
+
 
             }
-        });
+                else{
+                    SweetAlertDialog pDialogg2 = new SweetAlertDialog(search.this, SweetAlertDialog.WARNING_TYPE);
+
+                    pDialogg2.setTitleText("Server error");
+                    pDialogg2.setCustomImage(R.drawable.lotto);
+                    pDialogg2.setCancelButton((new String(getString(R.string.can))), new SweetAlertDialog.OnSweetClickListener() {
+                        @Override
+                        public void onClick(SweetAlertDialog sDialog) {
+                            sDialog.dismissWithAnimation();
+
+                        }
+                    })
+                            .show();
+
+                }
+            }
+        }) ;
         requestQueue.add(request);
 
     }
